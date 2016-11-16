@@ -10,6 +10,7 @@ namespace Taschenrechner_LernProjekt
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
