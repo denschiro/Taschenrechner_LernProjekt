@@ -22,7 +22,7 @@ namespace Taschenrechner_LernProjekt
 
             Console.WriteLine("Ergebnis: {0} " ,ergebnis);
 
-
+            Console.Read();
 
 
         }
