@@ -10,7 +10,21 @@ namespace Taschenrechner_LernProjekt
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Bitte ")
+            Console.WriteLine("Bitte ersten Summanden eingeben: ");
+            string ersterSummand = Console.ReadLine();
+
+            Console.WriteLine("Bitte zweiten Summanden eingeben: ");
+            string zweiterSummand = Console.ReadLine();
+            
+                
+
+            double ergebnis = Convert.ToDouble(ersterSummand) + Convert.ToDouble(zweiterSummand);
+
+            Console.WriteLine("Ergebnis: {0} " ,ergebnis);
+
+
+
+
         }
     }
 }
