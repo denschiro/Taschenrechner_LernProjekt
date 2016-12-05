@@ -19,22 +19,25 @@ namespace Taschenrechner_LernProjekt
             //Abfrage des zweiten Wert
             Console.WriteLine("Bitte zweiten Summanden eingeben: ");
             string zweiterSummand = Console.ReadLine();
-            
-                
-            //Convertierung und addieren beiden Werte
-            double ergebnis = Convert.ToDouble(ersterSummand) + Convert.ToDouble(zweiterSummand);
+
+            //Werte von String zu Double konvertierten
+            double ersterSummandalsZahl = Convert.ToDouble(ersterSummand);
+            double zweiterSummandalsZahl = Convert.ToDouble(zweiterSummand);
+
+            //addieren beiden Werte
+            double ergebnis = ersterSummandalsZahl + zweiterSummandalsZahl;
 
             //Ausgabe des Ergebnis
             Console.WriteLine("Ergebnis: {0} ", ergebnis);
-            
-            //Aufrufen der Methode Ausgabe
-            Ausgabe();
+
+            //Aufrufen der Methode WarteAufBenutzereingabe
+            WarteAufBenutzereingabe();
 
 
         }
 
-        //Methode Ausgabe
-        static void Ausgabe()
+        //Methode WarteAufBenutzereingabe
+        static void  WarteAufBenutzereingabe()
         {
             Console.WriteLine("Bitte zum beenden Return drücken");
             Console.Read();
