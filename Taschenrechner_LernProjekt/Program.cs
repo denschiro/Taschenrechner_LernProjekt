@@ -11,7 +11,6 @@ namespace Taschenrechner_LernProjekt
         static void Main(string[] args)
         {
             //Abfrage des ersten Wert
-
             Console.WriteLine("Bitte ersten Summanden eingeben: ");
             string ersterSummand = Console.ReadLine();
 
@@ -24,11 +23,11 @@ namespace Taschenrechner_LernProjekt
             double ersterSummandalsZahl = Convert.ToDouble(ersterSummand);
             double zweiterSummandalsZahl = Convert.ToDouble(zweiterSummand);
 
-            //addieren beiden Werte
-            double ergebnis = ersterSummandalsZahl + zweiterSummandalsZahl;
+            //addieren beiden Werte mit der Methode Addieren
+            double summe = Addiere(ersterSummandalsZahl, zweiterSummandalsZahl);
 
             //Ausgabe des Ergebnis
-            Console.WriteLine("Ergebnis: {0} ", ergebnis);
+            Console.WriteLine("Ergebnis: {0} ", summe);
 
             //Aufrufen der Methode WarteAufBenutzereingabe
             WarteAufBenutzereingabe();
@@ -43,6 +42,12 @@ namespace Taschenrechner_LernProjekt
             Console.Read();
         }
 
+        //Methode Addiere mit Rückgabewert
+        static double Addiere (double ersterSummandalsZahl, double zweiterSummandalsZahl)
+        {
+            double summe = ersterSummandalsZahl + zweiterSummandalsZahl;
+            return summe;
+        }
         
     }
 }
