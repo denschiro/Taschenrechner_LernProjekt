@@ -10,14 +10,21 @@ namespace Taschenrechner_LernProjekt
     {
         static void Main(string[] args)
         {
-            //Abfrage des ersten Wert
-            Console.WriteLine("Bitte ersten Summanden eingeben: ");
-            string ersterSummand = Console.ReadLine();
+            ////Abfrage des ersten Wert
+            //Console.WriteLine("Bitte ersten Summanden eingeben: ");
+            //string ersterSummand = Console.ReadLine();
 
 
-            //Abfrage des zweiten Wert
-            Console.WriteLine("Bitte zweiten Summanden eingeben: ");
-            string zweiterSummand = Console.ReadLine();
+            ////Abfrage des zweiten Wert
+            //Console.WriteLine("Bitte zweiten Summanden eingeben: ");
+            //string zweiterSummand = Console.ReadLine();
+
+
+            //Verwendung der Methode HoleSummanden mit Text und Rückgabe
+            string ersterSummand = HoleSummanden("Bitte ersten Summanden eingeben: ");
+
+            //Verwendung der Methode HoleSummanden mit Text und Rückgabe
+            string zweiterSummand = HoleSummanden("Bitte zweiten Summanden eingeben: ");
 
             //Werte von String zu Double konvertierten
             double ersterSummandalsZahl = Convert.ToDouble(ersterSummand);
@@ -32,6 +39,17 @@ namespace Taschenrechner_LernProjekt
             //Aufrufen der Methode WarteAufBenutzereingabe
             WarteAufBenutzereingabe();
 
+
+        }
+
+        //Methode HoleSummanden
+
+            static string HoleSummanden(string auforderungSummanden)
+        {
+            Console.WriteLine(auforderungSummanden);
+            string summand = Console.ReadLine();
+
+            return summand;
 
         }
 
