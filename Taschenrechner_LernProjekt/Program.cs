@@ -37,8 +37,8 @@ namespace Taschenrechner_LernProjekt
             Console.WriteLine("Ergebnis: {0} ", summe);
 
             //Aufrufen der Methode WarteAufBenutzereingabe
-            WarteAufBenutzereingabe();
-
+            //  Abglöst durch Methode HoleBenutzerEingabe ohne Rückgabewert vorher //WarteAufBenutzereingabe();
+            HoleBenutzerEingabe("Bitte zum beenden Return drücken");
 
         }
 
@@ -53,12 +53,12 @@ namespace Taschenrechner_LernProjekt
 
         }
 
-        //Methode WarteAufBenutzereingabe
-        static void  WarteAufBenutzereingabe()
-        {
-            Console.WriteLine("Bitte zum beenden Return drücken");
-            Console.Read();
-        }
+        //////Methode WarteAufBenutzereingabe
+        ////static void  WarteAufBenutzereingabe()
+        ////{
+        ////    Console.WriteLine("Bitte zum beenden Return drücken");
+        ////    Console.Read();
+        ////}
 
         //Methode Addiere mit Rückgabewert
         static double Addiere (double ersterSummandalsZahl, double zweiterSummandalsZahl)
