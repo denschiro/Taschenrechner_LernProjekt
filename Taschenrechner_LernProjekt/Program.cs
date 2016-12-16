@@ -20,18 +20,18 @@ namespace Taschenrechner_LernProjekt
             //string zweiterSummand = Console.ReadLine();
 
 
-            //Verwendung der Methode HoleSummanden mit Text und Rückgabe
-            string ersterSummand = HoleSummanden("Bitte ersten Summanden eingeben: ");
+            //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
+            string ersteZahlAlsString = HoleBenutzerEingabe("Bitte ersten Wert eingeben: ");
 
-            //Verwendung der Methode HoleSummanden mit Text und Rückgabe
-            string zweiterSummand = HoleSummanden("Bitte zweiten Summanden eingeben: ");
+            //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
+            string zweiteZahlAslsString = HoleBenutzerEingabe("Bitte zweiten Wert eingeben: ");
 
             //Werte von String zu Double konvertierten
-            double ersterSummandalsZahl = Convert.ToDouble(ersterSummand);
-            double zweiterSummandalsZahl = Convert.ToDouble(zweiterSummand);
+            double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
+            double zweiteZahl = Convert.ToDouble(zweiteZahlAslsString);
 
             //addieren beiden Werte mit der Methode Addieren
-            double summe = Addiere(ersterSummandalsZahl, zweiterSummandalsZahl);
+            double summe = Addiere(ersteZahl, zweiteZahl);
 
             //Ausgabe des Ergebnis
             Console.WriteLine("Ergebnis: {0} ", summe);
@@ -42,9 +42,9 @@ namespace Taschenrechner_LernProjekt
 
         }
 
-        //Methode HoleSummanden
+        //Methode HoleBenutzerEingabe
 
-            static string HoleSummanden(string auforderungSummanden)
+        static string HoleBenutzerEingabe(string auforderungSummanden)
         {
             Console.WriteLine(auforderungSummanden);
             string summand = Console.ReadLine();
@@ -66,6 +66,12 @@ namespace Taschenrechner_LernProjekt
             double summe = ersterSummandalsZahl + zweiterSummandalsZahl;
             return summe;
         }
-        
+
+        //Methode Subtrahiere mit Rückgabewert
+        static double Subtrahiere (double minuend, double subtrahent)
+        {
+            double differenz = minuend - subtrahent;
+            return differenz;
+        }
     }
 }
