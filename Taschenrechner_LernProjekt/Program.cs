@@ -10,15 +10,9 @@ namespace Taschenrechner_LernProjekt
     {
         static void Main(string[] args)
         {
-            ////Abfrage des ersten Wert
-            //Console.WriteLine("Bitte ersten Summanden eingeben: ");
-            //string ersterSummand = Console.ReadLine();
 
-
-            ////Abfrage des zweiten Wert
-            //Console.WriteLine("Bitte zweiten Summanden eingeben: ");
-            //string zweiterSummand = Console.ReadLine();
-
+            //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
+            string operatoren = HoleBenutzerEingabe("Bitte Rechenart angeben ( + oder -): ");
 
             //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
             string ersteZahlAlsString = HoleBenutzerEingabe("Bitte ersten Wert eingeben: ");
@@ -26,8 +20,7 @@ namespace Taschenrechner_LernProjekt
             //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
             string zweiteZahlAslsString = HoleBenutzerEingabe("Bitte zweiten Wert eingeben: ");
 
-            //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
-            string operatoren = HoleBenutzerEingabe("Bitte Rechenart angeben ( + oder -): ");
+           
 
             //Werte von String zu Double konvertierten
             double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
@@ -71,13 +64,6 @@ namespace Taschenrechner_LernProjekt
 
         }
 
-        //////Methode WarteAufBenutzereingabe
-        ////static void  WarteAufBenutzereingabe()
-        ////{
-        ////    Console.WriteLine("Bitte zum beenden Return drücken");
-        ////    Console.Read();
-        ////}
-
         //Methode Addiere mit Rückgabewert
         static double Addiere (double ersterSummandalsZahl, double zweiterSummandalsZahl)
         {
@@ -91,5 +77,14 @@ namespace Taschenrechner_LernProjekt
             double differenz = minuend - subtrahent;
             return differenz;
         }
+
+
+        ////Methode WarteAufBenutzereingabe
+        //static void  WarteAufBenutzereingabe()
+        //{
+        //    Console.WriteLine("Bitte zum beenden Return drücken");
+        //    Console.Read();
+        //}
+
     }
 }
