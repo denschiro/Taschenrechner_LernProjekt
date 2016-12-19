@@ -26,15 +26,33 @@ namespace Taschenrechner_LernProjekt
             //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
             string zweiteZahlAslsString = HoleBenutzerEingabe("Bitte zweiten Wert eingeben: ");
 
+            //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
+            string operatoren = HoleBenutzerEingabe("Bitte Rechenart angeben ( + oder -): ");
+
             //Werte von String zu Double konvertierten
             double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
             double zweiteZahl = Convert.ToDouble(zweiteZahlAslsString);
 
-            //addieren beiden Werte mit der Methode Addieren
-            double summe = Addiere(ersteZahl, zweiteZahl);
+            if (operatoren == "+")
+            {
+                //addieren beiden Werte mit der Methode Addieren
+                double summe = Addiere(ersteZahl, zweiteZahl);
 
-            //Ausgabe des Ergebnis
-            Console.WriteLine("Ergebnis: {0} ", summe);
+                //Ausgabe des Ergebnis
+                Console.WriteLine("Ergebnis: {0} ", summe);
+            }
+
+            else if (operatoren == "-")
+            {
+                double summe = Subtrahiere(ersteZahl, zweiteZahl);
+                //Ausgabe des Ergebnis
+                Console.WriteLine("Ergebnis: {0} ", summe);
+            }
+
+            else
+            {
+                Console.WriteLine("Falsche Eingabe");
+            }
 
             //Aufrufen der Methode WarteAufBenutzereingabe
             //  Abglöst durch Methode HoleBenutzerEingabe ohne Rückgabewert vorher //WarteAufBenutzereingabe();
