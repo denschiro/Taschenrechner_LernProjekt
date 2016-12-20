@@ -11,8 +11,6 @@ namespace Taschenrechner_LernProjekt
         static void Main(string[] args)
         {
 
-            //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
-            string operatoren = HoleBenutzerEingabe("Bitte Rechenart angeben ( + oder -): ");
 
             //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
             string ersteZahlAlsString = HoleBenutzerEingabe("Bitte ersten Wert eingeben: ");
@@ -20,32 +18,62 @@ namespace Taschenrechner_LernProjekt
             //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
             string zweiteZahlAslsString = HoleBenutzerEingabe("Bitte zweiten Wert eingeben: ");
 
-           
+            //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
+            string operatoren = HoleBenutzerEingabe("Bitte Rechenart angeben ( + oder -): ");
+
 
             //Werte von String zu Double konvertierten
             double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
             double zweiteZahl = Convert.ToDouble(zweiteZahlAslsString);
 
-            if (operatoren == "+")
-            {
-                //addieren beiden Werte mit der Methode Addieren
-                double summe = Addiere(ersteZahl, zweiteZahl);
 
-                //Ausgabe des Ergebnis
-                Console.WriteLine("Ergebnis: {0} ", summe);
+            switch (operatoren)
+            {
+                case "+" : //addieren beiden Werte mit der Methode Addieren
+                    double summe = Addiere(ersteZahl, zweiteZahl);
+
+                    //Ausgabe des Ergebnis
+                    Console.WriteLine("Ergebnis: {0} ", summe);
+                    break;
+
+                case "-":
+                    double differenz = Subtrahiere(ersteZahl, zweiteZahl);
+                        //Ausgabe des Ergebnis
+                     Console.WriteLine("Ergebnis: {0} ", differenz);
+                    break;
+
+                case "*":
+                case "/":
+                    Console.WriteLine("Funktion kommt noch! ");
+                    break;
+
+
+                default:
+                    Console.WriteLine("Falsche Eingabe");
+
+                    break;
             }
 
-            else if (operatoren == "-")
-            {
-                double summe = Subtrahiere(ersteZahl, zweiteZahl);
-                //Ausgabe des Ergebnis
-                Console.WriteLine("Ergebnis: {0} ", summe);
-            }
+            ////if (operatoren == "+")
+            ////{
+            ////    //addieren beiden Werte mit der Methode Addieren
+            ////    double summe = Addiere(ersteZahl, zweiteZahl);
 
-            else
-            {
-                Console.WriteLine("Falsche Eingabe");
-            }
+            ////    //Ausgabe des Ergebnis
+            ////    Console.WriteLine("Ergebnis: {0} ", summe);
+            ////}
+
+            ////else if (operatoren == "-")
+            ////{
+            ////    double summe = Subtrahiere(ersteZahl, zweiteZahl);
+            ////    //Ausgabe des Ergebnis
+            ////    Console.WriteLine("Ergebnis: {0} ", summe);
+            ////}
+
+            ////else
+            ////{
+            ////    Console.WriteLine("Falsche Eingabe");
+            ////}
 
             //Aufrufen der Methode WarteAufBenutzereingabe
             //  Abglöst durch Methode HoleBenutzerEingabe ohne Rückgabewert vorher //WarteAufBenutzereingabe();
