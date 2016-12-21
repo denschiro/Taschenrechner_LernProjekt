@@ -19,7 +19,7 @@ namespace Taschenrechner_LernProjekt
             string zweiteZahlAslsString = HoleBenutzerEingabe("Bitte zweiten Wert eingeben: ");
 
             //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
-            string operatoren = HoleBenutzerEingabe("Bitte Rechenart angeben ( + oder -): ");
+            string operatoren = HoleBenutzerEingabe("Bitte Operation auswählen angeben ( + - / *): ");
 
 
             //Werte von String zu Double konvertierten
@@ -30,10 +30,10 @@ namespace Taschenrechner_LernProjekt
             switch (operatoren)
             {
                 case "+" : //addieren beiden Werte mit der Methode Addieren
-                    double summe = Addiere(ersteZahl, zweiteZahl);
+                    double resultat = Addiere(ersteZahl, zweiteZahl);
 
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis: {0} ", summe);
+                    Console.WriteLine("Ergebnis: {0} ", resultat);
                     break;
 
                 case "-":
@@ -43,13 +43,21 @@ namespace Taschenrechner_LernProjekt
                     break;
 
                 case "*":
+                    double multiplikat = Multipliziere(ersteZahl, zweiteZahl);
+                    //Ausgabe des Ergebnis
+                    Console.WriteLine("Ergebnis: {0} ", multiplikat);
+                    break;
+
                 case "/":
-                    Console.WriteLine("Funktion kommt noch! ");
+                    double divident = Dividiere(ersteZahl, zweiteZahl);
+                    //Ausgabe des Ergebnis
+                    Console.WriteLine("Ergebnis: {0} ", divident);
+
                     break;
 
 
                 default:
-                    Console.WriteLine("Falsche Eingabe");
+                    Console.WriteLine("Ungültige Operation, Abbruch");
 
                     break;
             }
@@ -106,7 +114,20 @@ namespace Taschenrechner_LernProjekt
             return differenz;
         }
 
+        static double Dividiere (double basis, double divident)
+        {
+            double resultat =  basis / divident;
+            return resultat;
+        }
 
+        static double Multipliziere(double multiplient, double basis)
+        {
+            double multiplikat = multiplient * basis;
+            return multiplikat;
+
+        }
+        
+        
         ////Methode WarteAufBenutzereingabe
         //static void  WarteAufBenutzereingabe()
         //{
