@@ -8,6 +8,7 @@ namespace Taschenrechner_LernProjekt
 {
     class Program
     {
+      
         static void Main(string[] args)
         {
 
@@ -26,32 +27,34 @@ namespace Taschenrechner_LernProjekt
             double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
             double zweiteZahl = Convert.ToDouble(zweiteZahlAslsString);
 
+            double ergebnis = 0;
 
             switch (operatoren)
             {
+                            
                 case "+" : //addieren beiden Werte mit der Methode Addieren
-                    double resultat = Addiere(ersteZahl, zweiteZahl);
-
+                    ergebnis = Addiere(ersteZahl, zweiteZahl);
+                   
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis: {0} ", resultat);
+                    Console.WriteLine("Ergebnis: {0} ", ergebnis);
                     break;
 
                 case "-":
-                    double differenz = Subtrahiere(ersteZahl, zweiteZahl);
+                    ergebnis = Subtrahiere(ersteZahl, zweiteZahl);
                         //Ausgabe des Ergebnis
-                     Console.WriteLine("Ergebnis: {0} ", differenz);
+                     Console.WriteLine("Ergebnis: {0} ", ergebnis);
                     break;
 
                 case "*":
-                    double multiplikat = Multipliziere(ersteZahl, zweiteZahl);
+                    ergebnis = Multipliziere(ersteZahl, zweiteZahl);
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis: {0} ", multiplikat);
+                    Console.WriteLine("Ergebnis: {0} ", ergebnis);
                     break;
 
                 case "/":
-                    double divident = Dividiere(ersteZahl, zweiteZahl);
+                    ergebnis = Dividiere(ersteZahl, zweiteZahl);
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis: {0} ", divident);
+                    Console.WriteLine("Ergebnis: {0} ", ergebnis);
 
                     break;
 
@@ -62,30 +65,7 @@ namespace Taschenrechner_LernProjekt
                     break;
             }
 
-            ////if (operatoren == "+")
-            ////{
-            ////    //addieren beiden Werte mit der Methode Addieren
-            ////    double summe = Addiere(ersteZahl, zweiteZahl);
-
-            ////    //Ausgabe des Ergebnis
-            ////    Console.WriteLine("Ergebnis: {0} ", summe);
-            ////}
-
-            ////else if (operatoren == "-")
-            ////{
-            ////    double summe = Subtrahiere(ersteZahl, zweiteZahl);
-            ////    //Ausgabe des Ergebnis
-            ////    Console.WriteLine("Ergebnis: {0} ", summe);
-            ////}
-
-            ////else
-            ////{
-            ////    Console.WriteLine("Falsche Eingabe");
-            ////}
-
-            //Aufrufen der Methode WarteAufBenutzereingabe
-            //  Abglöst durch Methode HoleBenutzerEingabe ohne Rückgabewert vorher //WarteAufBenutzereingabe();
-            HoleBenutzerEingabe("Bitte zum beenden Return drücken");
+         HoleBenutzerEingabe("Bitte zum beenden Return drücken");
 
         }
 
@@ -128,12 +108,6 @@ namespace Taschenrechner_LernProjekt
         }
         
         
-        ////Methode WarteAufBenutzereingabe
-        //static void  WarteAufBenutzereingabe()
-        //{
-        //    Console.WriteLine("Bitte zum beenden Return drücken");
-        //    Console.Read();
-        //}
 
     }
 }
