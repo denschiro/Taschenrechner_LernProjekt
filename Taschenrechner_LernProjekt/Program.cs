@@ -29,6 +29,8 @@ namespace Taschenrechner_LernProjekt
 
             double ergebnis = Berechnung(ersteZahl, zweiteZahl, operatoren);
 
+            double ausgabe = Ausgabe(ergebnis, operatoren);
+
             //double ergebnis = 0;
 
             //switch (operatoren)
@@ -93,39 +95,80 @@ namespace Taschenrechner_LernProjekt
                     ergebnis = Addiere(ersteZahl, zweiteZahl);
 
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis: {0} ", ergebnis);
+                    //Console.WriteLine("Ergebnis: {0} ", ergebnis);
                     break;
 
                 case "-":
                     ergebnis = Subtrahiere(ersteZahl, zweiteZahl);
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis: {0} ", ergebnis);
+                   // Console.WriteLine("Ergebnis: {0} ", ergebnis);
                     break;
 
                 case "*":
                     ergebnis = Multipliziere(ersteZahl, zweiteZahl);
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis: {0} ", ergebnis);
+                   // Console.WriteLine("Ergebnis: {0} ", ergebnis);
                     break;
 
                 case "/":
                     ergebnis = Dividiere(ersteZahl, zweiteZahl);
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis: {0} ", ergebnis);
+                   // Console.WriteLine("Ergebnis: {0} ", ergebnis);
 
                     break;
 
 
                 default:
-                    Console.WriteLine("Ungültige Operation, Abbruch");
+                    ergebnis = 0 ;
 
                     break;
             }
             return ergebnis;
         }
 
-        //Methode Addiere mit Rückgabewert
-        static double Addiere (double ersterSummandalsZahl, double zweiterSummandalsZahl)
+        static double Ausgabe (double ergebnis, string operatoren)
+        { 
+
+            switch (operatoren)
+            {
+
+                case "+": //addieren beiden Werte mit der Methode Addieren
+                    
+
+        //Ausgabe des Ergebnis
+        Console.WriteLine("Ergebnis: {0} ", ergebnis);
+                    break;
+
+                case "-":
+                
+        //Ausgabe des Ergebnis
+        Console.WriteLine("Ergebnis: {0} ", ergebnis);
+                    break;
+
+                case "*":
+             
+        //Ausgabe des Ergebnis
+        Console.WriteLine("Ergebnis: {0} ", ergebnis);
+                    break;
+
+                case "/":
+                  
+        //Ausgabe des Ergebnis
+        Console.WriteLine("Ergebnis: {0} ", ergebnis);
+
+                    break;
+
+
+                default:
+                    Console.WriteLine("Ungültige Operation, abbruch");
+
+                    break;
+            }
+            return ergebnis;
+        }
+
+//Methode Addiere mit Rückgabewert
+static double Addiere (double ersterSummandalsZahl, double zweiterSummandalsZahl)
         {
             double summe = ersterSummandalsZahl + zweiterSummandalsZahl;
             return summe;
