@@ -31,49 +31,10 @@ namespace Taschenrechner_LernProjekt
 
             double ausgabe = Ausgabe(ergebnis, operatoren);
 
-            //double ergebnis = 0;
-
-            //switch (operatoren)
-            //{
-                            
-            //    case "+" : //addieren beiden Werte mit der Methode Addieren
-            //        ergebnis = Addiere(ersteZahl, zweiteZahl);
-                   
-            //        //Ausgabe des Ergebnis
-            //        Console.WriteLine("Ergebnis: {0} ", ergebnis);
-            //        break;
-
-            //    case "-":
-            //        ergebnis = Subtrahiere(ersteZahl, zweiteZahl);
-            //            //Ausgabe des Ergebnis
-            //         Console.WriteLine("Ergebnis: {0} ", ergebnis);
-            //        break;
-
-            //    case "*":
-            //        ergebnis = Multipliziere(ersteZahl, zweiteZahl);
-            //        //Ausgabe des Ergebnis
-            //        Console.WriteLine("Ergebnis: {0} ", ergebnis);
-            //        break;
-
-            //    case "/":
-            //        ergebnis = Dividiere(ersteZahl, zweiteZahl);
-            //        //Ausgabe des Ergebnis
-            //        Console.WriteLine("Ergebnis: {0} ", ergebnis);
-
-            //        break;
-
-
-            //    default:
-            //        Console.WriteLine("Ungültige Operation, Abbruch");
-
-            //        break;
-            //}
-
          HoleBenutzerEingabe("Bitte zum beenden Return drücken");
 
         }
 
-        //Methode HoleBenutzerEingabe
 
         static string HoleBenutzerEingabe(string auforderungSummanden)
         {
@@ -136,31 +97,31 @@ namespace Taschenrechner_LernProjekt
                     
 
         //Ausgabe des Ergebnis
-        Console.WriteLine("Ergebnis: {0} ", ergebnis);
+        Console.WriteLine("Ergebnis der Addition: {0} ", ergebnis);
                     break;
 
                 case "-":
                 
         //Ausgabe des Ergebnis
-        Console.WriteLine("Ergebnis: {0} ", ergebnis);
+        Console.WriteLine("Ergebnis der Subtraktion: {0} ", ergebnis);
                     break;
 
                 case "*":
              
         //Ausgabe des Ergebnis
-        Console.WriteLine("Ergebnis: {0} ", ergebnis);
+        Console.WriteLine("Ergebnis der Multiplikation: {0} ", ergebnis);
                     break;
 
                 case "/":
                   
         //Ausgabe des Ergebnis
-        Console.WriteLine("Ergebnis: {0} ", ergebnis);
+        Console.WriteLine("Ergebnis der Division: {0} ", ergebnis);
 
                     break;
 
 
                 default:
-                    Console.WriteLine("Ungültige Operation, abbruch");
+                    Console.WriteLine("Ungültige Operation, Abbruch");
 
                     break;
             }
