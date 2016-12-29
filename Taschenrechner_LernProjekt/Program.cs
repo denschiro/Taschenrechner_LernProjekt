@@ -29,7 +29,7 @@ namespace Taschenrechner_LernProjekt
 
             double ergebnis = Berechnung(ersteZahl, zweiteZahl, operatoren);
 
-            double ausgabe = Ausgabe(ergebnis, operatoren);
+            Ausgabe(ergebnis, operatoren);
 
          HoleBenutzerEingabe("Bitte zum beenden Return drücken");
 
@@ -129,7 +129,7 @@ namespace Taschenrechner_LernProjekt
         }
 
 //Methode Addiere mit Rückgabewert
-static double Addiere (double ersterSummandalsZahl, double zweiterSummandalsZahl)
+        static double Addiere (double ersterSummandalsZahl, double zweiterSummandalsZahl)
         {
             double summe = ersterSummandalsZahl + zweiterSummandalsZahl;
             return summe;
