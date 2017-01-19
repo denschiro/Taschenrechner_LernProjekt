@@ -12,15 +12,16 @@ namespace Taschenrechner_LernProjekt
         static void Main(string[] args)
         {
 
+            ConsoleView view = new ConsoleView();
 
             //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
-            string ersteZahlAlsString = HoleBenutzerEingabe("Bitte ersten Wert eingeben: ");
+            string ersteZahlAlsString = view.HoleBenutzerEingabe("Bitte ersten Wert eingeben: ");
 
             //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
-            string zweiteZahlAslsString = HoleBenutzerEingabe("Bitte zweiten Wert eingeben: ");
+            string zweiteZahlAslsString = view.HoleBenutzerEingabe("Bitte zweiten Wert eingeben: ");
 
             //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
-            string operatoren = HoleBenutzerEingabe("Bitte Operation auswählen angeben ( + , - , / , *): ");
+            string operatoren = view.HoleBenutzerEingabe("Bitte Operation auswählen angeben ( + , - , / , *): ");
 
 
             //Werte von String zu Double konvertierten
@@ -32,66 +33,16 @@ namespace Taschenrechner_LernProjekt
              model.Berechne (ersteZahl, zweiteZahl, operatoren);
 
             //Ausgabe der Ergbnisse
-            Ausgabe(model.Resultat, operatoren);
+            view.Ausgabe(model.Resultat, operatoren);
 
-         HoleBenutzerEingabe("Bitte zum beenden Return drücken");
-
-        }
-
-
-        static string HoleBenutzerEingabe(string auforderungSummanden)
-        {
-            Console.WriteLine(auforderungSummanden);
-            string summand = Console.ReadLine();
-
-            return summand;
+         view.HoleBenutzerEingabe("Bitte zum beenden Return drücken");
 
         }
 
-        
 
-        static double Ausgabe (double ergebnis, string operatoren)
-        { 
+     
 
-            switch (operatoren)
-            {
-
-                case "+": //addieren beiden Werte mit der Methode Addieren
-                    
-
-        //Ausgabe des Ergebnis
-        Console.WriteLine("Ergebnis der Addition: {0} ", ergebnis);
-                    break;
-
-                case "-":
-                
-        //Ausgabe des Ergebnis
-        Console.WriteLine("Ergebnis der Subtraktion: {0} ", ergebnis);
-                    break;
-
-                case "*":
-             
-        //Ausgabe des Ergebnis
-        Console.WriteLine("Ergebnis der Multiplikation: {0} ", ergebnis);
-                    break;
-
-                case "/":
-                  
-        //Ausgabe des Ergebnis
-        Console.WriteLine("Ergebnis der Division: {0} ", ergebnis);
-
-                    break;
-
-
-                default:
-                    Console.WriteLine("Ungültige Operation, Abbruch");
-
-                    break;
-            }
-            return ergebnis;
-        }
-
-
+    
         
 
     }
