@@ -29,9 +29,10 @@ namespace Taschenrechner_LernProjekt
 
             //Berechnung
             RechnerModel model = new RechnerModel();
-            double ergebnis = model.Berechne (ersteZahl, zweiteZahl, operatoren);
+             model.Berechne (ersteZahl, zweiteZahl, operatoren);
 
-            Ausgabe(ergebnis, operatoren);
+            //Ausgabe der Ergbnisse
+            Ausgabe(model.Resultat, operatoren);
 
          HoleBenutzerEingabe("Bitte zum beenden Return drücken");
 

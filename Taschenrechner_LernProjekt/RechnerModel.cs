@@ -8,53 +8,56 @@ namespace Taschenrechner_LernProjekt
 {
     class RechnerModel
     {
-        public double Berechne(double ersteZahl, double zweiteZahl, string operatoren)
-        {
-            double ergebnis = 0;
+        public double Resultat { get; private set; }
 
-            switch (operatoren)
+        public RechnerModel()
+        {
+            Resultat = 0;  // Konstruktor der Resultat erstmal mit 0 definiert.
+        }
+
+
+        public void Berechne(double ersteZahl, double zweiteZahl, string operatoren)
+        {
+                    switch (operatoren)
             {
 
                 case "+": //addieren beiden Werte mit der Methode Addieren
-                    ergebnis = Addiere(ersteZahl, zweiteZahl);
+                    Resultat = Addiere(ersteZahl, zweiteZahl);
 
                     //Ausgabe des Ergebnis
                     //Console.WriteLine("Ergebnis: {0} ", ergebnis);
                     break;
 
                 case "-":
-                    ergebnis = Subtrahiere(ersteZahl, zweiteZahl);
+                    Resultat = Subtrahiere(ersteZahl, zweiteZahl);
                     //Ausgabe des Ergebnis
                     // Console.WriteLine("Ergebnis: {0} ", ergebnis);
                     break;
 
                 case "*":
-                    ergebnis = Multipliziere(ersteZahl, zweiteZahl);
+                    Resultat = Multipliziere(ersteZahl, zweiteZahl);
                     //Ausgabe des Ergebnis
                     // Console.WriteLine("Ergebnis: {0} ", ergebnis);
                     break;
 
                 case "/":
-                    ergebnis = Dividiere(ersteZahl, zweiteZahl);
+                    Resultat = Dividiere(ersteZahl, zweiteZahl);
                     //Ausgabe des Ergebnis
                     // Console.WriteLine("Ergebnis: {0} ", ergebnis);
 
                     break;
 
 
-                default:
-                    ergebnis = 0;
+                //default:
+                //    Resultat = 0;
 
                     break;
             }
-            return ergebnis;
+           
         }
 
 
-
-        //Ausgabe
-
-
+        
         //Methode Addiere mit Rückgabewert
         private double Addiere(double ersterSummandalsZahl, double zweiterSummandalsZahl)
         {
