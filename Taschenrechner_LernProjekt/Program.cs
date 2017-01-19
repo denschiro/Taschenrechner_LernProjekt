@@ -27,7 +27,9 @@ namespace Taschenrechner_LernProjekt
             double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
             double zweiteZahl = Convert.ToDouble(zweiteZahlAslsString);
 
-            double ergebnis = Berechnung(ersteZahl, zweiteZahl, operatoren);
+            //Berechnung
+            RechnerModel model = new RechnerModel();
+            double ergebnis = model.Berechne (ersteZahl, zweiteZahl, operatoren);
 
             Ausgabe(ergebnis, operatoren);
 
@@ -45,47 +47,7 @@ namespace Taschenrechner_LernProjekt
 
         }
 
-        static double Berechnung(double ersteZahl, double zweiteZahl, string operatoren)
-        {
-            double ergebnis = 0;
-
-            switch (operatoren)
-            {
-
-                case "+": //addieren beiden Werte mit der Methode Addieren
-                    ergebnis = Addiere(ersteZahl, zweiteZahl);
-
-                    //Ausgabe des Ergebnis
-                    //Console.WriteLine("Ergebnis: {0} ", ergebnis);
-                    break;
-
-                case "-":
-                    ergebnis = Subtrahiere(ersteZahl, zweiteZahl);
-                    //Ausgabe des Ergebnis
-                   // Console.WriteLine("Ergebnis: {0} ", ergebnis);
-                    break;
-
-                case "*":
-                    ergebnis = Multipliziere(ersteZahl, zweiteZahl);
-                    //Ausgabe des Ergebnis
-                   // Console.WriteLine("Ergebnis: {0} ", ergebnis);
-                    break;
-
-                case "/":
-                    ergebnis = Dividiere(ersteZahl, zweiteZahl);
-                    //Ausgabe des Ergebnis
-                   // Console.WriteLine("Ergebnis: {0} ", ergebnis);
-
-                    break;
-
-
-                default:
-                    ergebnis = 0 ;
-
-                    break;
-            }
-            return ergebnis;
-        }
+        
 
         static double Ausgabe (double ergebnis, string operatoren)
         { 
@@ -128,33 +90,7 @@ namespace Taschenrechner_LernProjekt
             return ergebnis;
         }
 
-//Methode Addiere mit Rückgabewert
-        static double Addiere (double ersterSummandalsZahl, double zweiterSummandalsZahl)
-        {
-            double summe = ersterSummandalsZahl + zweiterSummandalsZahl;
-            return summe;
-        }
 
-        //Methode Subtrahiere mit Rückgabewert
-        static double Subtrahiere (double minuend, double subtrahent)
-        {
-            double differenz = minuend - subtrahent;
-            return differenz;
-        }
-
-        static double Dividiere (double basis, double divident)
-        {
-            double resultat =  basis / divident;
-            return resultat;
-        }
-
-        static double Multipliziere(double multiplient, double basis)
-        {
-            double multiplikat = multiplient * basis;
-            return multiplikat;
-
-        }
-        
         
 
     }
