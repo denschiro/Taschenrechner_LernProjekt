@@ -30,7 +30,7 @@ namespace Taschenrechner_LernProjekt
             //Ausgabe der Ergbnisse
             view.Ausgabe( operatoren);
 
-         view.WarteAufEndeDurchBenutzer();
+            view.WarteAufEndeDurchBenutzer();
 
         }
 
