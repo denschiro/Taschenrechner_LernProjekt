@@ -15,20 +15,45 @@ namespace Taschenrechner_LernProjekt
             this.model = model;             //Attribut (li) wie auch Parameter (re) heißt model  
         }
 
-        //Hole Benutzereingabe
-        public string HoleBenutzerEingabe(string auforderungSummanden)
+        //////Hole Benutzereingabe
+        ////public string HoleBenutzerEingabe(string auforderungSummanden)
+        ////{
+        ////    Console.WriteLine(auforderungSummanden);
+        ////    string summand = Console.ReadLine();
+
+        ////    return summand;
+
+        ////}
+
+
+        // Methode HoleZahlVomBenutzerEingabe 
+        public string HoleZahlVomBenutzer()
         {
-            Console.WriteLine(auforderungSummanden);
-            string summand = Console.ReadLine();
-
-            return summand;
-
+            Console.Write("Bitte Zahl eingeben: ");
+           return Console.ReadLine();
         }
+
+        // Methode HoleZahlVomBenutzerEingabe 
+        public string HoleOperatorVomBenutzer()
+        {
+            Console.Write("Bitte Operator  ( + - / *  ) angeben: ");
+            return Console.ReadLine();
+        }
+
+
+        // Methode HoleZahlVomBenutzerEingabe 
+        public string WarteAufEndeDurchBenutzer()
+        {
+            Console.Write("Zum beenden bitte Return drücken! ");
+            return Console.ReadLine();
+        }
+
+
 
         //Ausgabe von Resultaten
 
 
-       public double Ausgabe( string operatoren)
+        public double Ausgabe( string operatoren)
         {
 
             switch (operatoren)

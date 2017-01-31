@@ -51,7 +51,7 @@ namespace Taschenrechner_LernProjekt
                 //default:
                 //    Resultat = 0;
 
-                    break;
+                    //break;
             }
            
         }

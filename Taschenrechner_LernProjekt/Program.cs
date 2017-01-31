@@ -15,19 +15,14 @@ namespace Taschenrechner_LernProjekt
             RechnerModel model = new RechnerModel();
             ConsoleView view = new ConsoleView(model);
 
-            //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
-            string ersteZahlAlsString = view.HoleBenutzerEingabe("Bitte ersten Wert eingeben: ");
-
-            //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
-            string zweiteZahlAslsString = view.HoleBenutzerEingabe("Bitte zweiten Wert eingeben: ");
-
-            //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
-            string operatoren = view.HoleBenutzerEingabe("Bitte Operation auswählen angeben ( + , - , / , *): ");
-
+            string ersteZahlAlsString = view.HoleZahlVomBenutzer();
+            string operatoren = view.HoleOperatorVomBenutzer();
+            string zweiteZahlAlsString = view.HoleZahlVomBenutzer();
+            
 
             //Werte von String zu Double konvertierten
             double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
-            double zweiteZahl = Convert.ToDouble(zweiteZahlAslsString);
+            double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
             //Berechnung
              model.Berechne (ersteZahl, zweiteZahl, operatoren);
@@ -35,7 +30,7 @@ namespace Taschenrechner_LernProjekt
             //Ausgabe der Ergbnisse
             view.Ausgabe( operatoren);
 
-         view.HoleBenutzerEingabe("Bitte zum beenden Return drücken");
+         view.WarteAufEndeDurchBenutzer();
 
         }
 
