@@ -8,6 +8,12 @@ namespace Taschenrechner_LernProjekt
 {
     class ConsoleView
     {
+        private RechnerModel model;  //Attriut
+
+        public ConsoleView(RechnerModel model)  //Konstruktor
+        {
+            this.model = model;             //Attribut (li) wie auch Parameter (re) heißt model  
+        }
 
         //Hole Benutzereingabe
         public string HoleBenutzerEingabe(string auforderungSummanden)
@@ -22,7 +28,7 @@ namespace Taschenrechner_LernProjekt
         //Ausgabe von Resultaten
 
 
-       public double Ausgabe(double ergebnis, string operatoren)
+       public double Ausgabe( string operatoren)
         {
 
             switch (operatoren)
@@ -32,25 +38,25 @@ namespace Taschenrechner_LernProjekt
 
 
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis der Addition: {0} ", ergebnis);
+                    Console.WriteLine("Ergebnis der Addition: {0} ", model.Resultat );
                     break;
 
                 case "-":
 
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis der Subtraktion: {0} ", ergebnis);
+                    Console.WriteLine("Ergebnis der Subtraktion: {0} ", model.Resultat);
                     break;
 
                 case "*":
 
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis der Multiplikation: {0} ", ergebnis);
+                    Console.WriteLine("Ergebnis der Multiplikation: {0} ", model.Resultat);
                     break;
 
                 case "/":
 
                     //Ausgabe des Ergebnis
-                    Console.WriteLine("Ergebnis der Division: {0} ", ergebnis);
+                    Console.WriteLine("Ergebnis der Division: {0} ", model.Resultat);
 
                     break;
 
@@ -60,8 +66,10 @@ namespace Taschenrechner_LernProjekt
 
                     break;
             }
-            return ergebnis;
-        }
+            return model.Resultat;
+               
+                
+          }
 
 
 

@@ -12,7 +12,8 @@ namespace Taschenrechner_LernProjekt
         static void Main(string[] args)
         {
 
-            ConsoleView view = new ConsoleView();
+            RechnerModel model = new RechnerModel();
+            ConsoleView view = new ConsoleView(model);
 
             //Verwendung der Methode HoleBenutzerEingabe mit Text und Rückgabe
             string ersteZahlAlsString = view.HoleBenutzerEingabe("Bitte ersten Wert eingeben: ");
@@ -29,11 +30,10 @@ namespace Taschenrechner_LernProjekt
             double zweiteZahl = Convert.ToDouble(zweiteZahlAslsString);
 
             //Berechnung
-            RechnerModel model = new RechnerModel();
              model.Berechne (ersteZahl, zweiteZahl, operatoren);
 
             //Ausgabe der Ergbnisse
-            view.Ausgabe(model.Resultat, operatoren);
+            view.Ausgabe( operatoren);
 
          view.HoleBenutzerEingabe("Bitte zum beenden Return drücken");
 
