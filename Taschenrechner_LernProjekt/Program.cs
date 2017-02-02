@@ -14,23 +14,12 @@ namespace Taschenrechner_LernProjekt
 
             RechnerModel model = new RechnerModel();
             ConsoleView view = new ConsoleView(model);
+            AnwendungsController controller = new AnwendungsController(view, model);
 
-            string ersteZahlAlsString = view.HoleZahlVomBenutzer();
-            string operatoren = view.HoleOperatorVomBenutzer();
-            string zweiteZahlAlsString = view.HoleZahlVomBenutzer();
-            
 
-            //Werte von String zu Double konvertierten
-            double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
-            double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
-            //Berechnung
-             model.Berechne (ersteZahl, zweiteZahl, operatoren);
+            controller.Ausführen();
 
-            //Ausgabe der Ergbnisse
-            view.Ausgabe( operatoren);
-
-            view.WarteAufEndeDurchBenutzer();
 
         }
 
