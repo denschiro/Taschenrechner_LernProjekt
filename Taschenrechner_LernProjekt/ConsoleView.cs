@@ -27,10 +27,10 @@ namespace Taschenrechner_LernProjekt
 
 
         // Methode HoleZahlVomBenutzerEingabe 
-        public string HoleZahlVomBenutzer()
+        public double HoleZahlVomBenutzer()
         {
             Console.Write("Bitte Zahl eingeben: ");
-           return Console.ReadLine();
+           return Convert.ToDouble(Console.ReadLine());
         }
 
         // Methode HoleZahlVomBenutzerEingabe 

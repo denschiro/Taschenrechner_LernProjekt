@@ -22,15 +22,15 @@ namespace Taschenrechner_LernProjekt
         public void Ausführen()
         {
 
-            string ersteZahlAlsString = view.HoleZahlVomBenutzer();
+            double ersteZahl = view.HoleZahlVomBenutzer();
             string operatoren = view.HoleOperatorVomBenutzer();
-            string zweiteZahlAlsString = view.HoleZahlVomBenutzer();
+            double zweiteZahl = view.HoleZahlVomBenutzer();
 
 
 
-            //Werte von String zu Double konvertierten
-            double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
-            double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
+            ////Werte von String zu Double konvertierten
+            //double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
+            //double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
 
             //Berechnung
