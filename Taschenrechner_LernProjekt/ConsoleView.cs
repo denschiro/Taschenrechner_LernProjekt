@@ -56,10 +56,10 @@ namespace Taschenrechner_LernProjekt
         //Ausgabe von Resultaten
 
 
-        public double Ausgabe( string operatoren)
+        public double Ausgabe()
         {
 
-            switch (operatoren)
+            switch (model.Operation)
             {
 
                 case "+": //addieren beiden Werte mit der Methode Addieren
