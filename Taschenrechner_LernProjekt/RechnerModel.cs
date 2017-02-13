@@ -9,15 +9,19 @@ namespace Taschenrechner_LernProjekt
     class RechnerModel
     {
         public double Resultat { get; private set; }
+        public string Operation { get; private set; }
 
         public RechnerModel()
         {
             Resultat = 0;  // Konstruktor der Resultat erstmal mit 0 definiert.
+            Operation = "unbekannt";
         }
 
 
         public void Berechne(double ersteZahl, double zweiteZahl, string operatoren)
         {
+            this.Operation = operatoren;
+
                     switch (operatoren)
             {
 
