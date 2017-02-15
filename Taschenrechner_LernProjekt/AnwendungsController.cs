@@ -22,19 +22,18 @@ namespace Taschenrechner_LernProjekt
         public void Ausführen()
         {
 
-            double ersteZahl = view.HoleZahlVomBenutzer();
-            string operatoren = view.HoleOperatorVomBenutzer();
-            double zweiteZahl = view.HoleZahlVomBenutzer();
-
+            //Abfrage der EIngabe 
+            view.HoleEingabeVomBenutzer();
 
 
             //Berechnung
-            model.Berechne(ersteZahl, zweiteZahl, operatoren);
+            model.Berechne();
 
 
             //Ausgabe der Ergbnisse
             view.Ausgabe();
 
+            //Abbruch / beenden mit Enter
             view.WarteAufEndeDurchBenutzer();
 
 

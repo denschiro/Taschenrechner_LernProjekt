@@ -15,19 +15,17 @@ namespace Taschenrechner_LernProjekt
             this.model = model;             //Attribut (li) wie auch Parameter (re) heißt model  
         }
 
-        //////Hole Benutzereingabe
-        ////public string HoleBenutzerEingabe(string auforderungSummanden)
-        ////{
-        ////    Console.WriteLine(auforderungSummanden);
-        ////    string summand = Console.ReadLine();
+       public void HoleEingabeVomBenutzer()
+        {
+            model.ErsteZahl = HoleZahlVomBenutzer();
+            model.Operation = HoleOperatorVomBenutzer();
+            model.ZweiteZahl = HoleZahlVomBenutzer();
 
-        ////    return summand;
-
-        ////}
+        }
 
 
         // Methode HoleZahlVomBenutzerEingabe 
-        public double HoleZahlVomBenutzer()
+       private double HoleZahlVomBenutzer()
         {
 
             string zahl;
@@ -36,15 +34,15 @@ namespace Taschenrechner_LernProjekt
            return Convert.ToDouble(zahl);
         }
 
-        // Methode HoleZahlVomBenutzerEingabe 
-        public string HoleOperatorVomBenutzer()
+        // Methode HoleOperatorVomBenutzerEingabe 
+        private string HoleOperatorVomBenutzer()
         {
             Console.Write("Bitte Operator  ( + - / *  ) angeben: ");
             return Console.ReadLine();
         }
 
 
-        // Methode HoleZahlVomBenutzerEingabe 
+        // Methode WarteAufEndeDurcgBenutzer  
         public string WarteAufEndeDurchBenutzer()
         {
             Console.Write("Zum beenden bitte Return drücken! ");

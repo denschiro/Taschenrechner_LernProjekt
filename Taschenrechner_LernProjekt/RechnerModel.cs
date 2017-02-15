@@ -9,7 +9,11 @@ namespace Taschenrechner_LernProjekt
     class RechnerModel
     {
         public double Resultat { get; private set; }
-        public string Operation { get; private set; }
+        public string Operation { get; set; }
+
+        public double ErsteZahl { get; set; }
+
+        public double ZweiteZahl { get; set; }
 
         public RechnerModel()
         {
@@ -18,44 +22,36 @@ namespace Taschenrechner_LernProjekt
         }
 
 
-        public void Berechne(double ersteZahl, double zweiteZahl, string operatoren)
+        public void Berechne()
         {
-            this.Operation = operatoren;
+           
 
-                    switch (operatoren)
+                    switch (Operation)
             {
 
                 case "+": //addieren beiden Werte mit der Methode Addieren
-                    Resultat = Addiere(ersteZahl, zweiteZahl);
+                    Resultat = Addiere(ErsteZahl, ZweiteZahl);
 
-                    //Ausgabe des Ergebnis
-                    //Console.WriteLine("Ergebnis: {0} ", ergebnis);
                     break;
 
                 case "-":
-                    Resultat = Subtrahiere(ersteZahl, zweiteZahl);
-                    //Ausgabe des Ergebnis
-                    // Console.WriteLine("Ergebnis: {0} ", ergebnis);
+                    Resultat = Subtrahiere(ErsteZahl, ZweiteZahl);
+            
                     break;
 
                 case "*":
-                    Resultat = Multipliziere(ersteZahl, zweiteZahl);
-                    //Ausgabe des Ergebnis
-                    // Console.WriteLine("Ergebnis: {0} ", ergebnis);
+                    Resultat = Multipliziere(ErsteZahl, ZweiteZahl);
+                    
                     break;
 
                 case "/":
-                    Resultat = Dividiere(ersteZahl, zweiteZahl);
-                    //Ausgabe des Ergebnis
-                    // Console.WriteLine("Ergebnis: {0} ", ergebnis);
-
+                    Resultat = Dividiere(ErsteZahl, ZweiteZahl);
+                    
                     break;
 
 
-                //default:
-                //    Resultat = 0;
 
-                    //break;
+                   
             }
            
         }
