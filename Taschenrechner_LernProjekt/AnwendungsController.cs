@@ -28,11 +28,6 @@ namespace Taschenrechner_LernProjekt
 
 
 
-            ////Werte von String zu Double konvertierten
-            //double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
-            //double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
-
-
             //Berechnung
             model.Berechne(ersteZahl, zweiteZahl, operatoren);
 
