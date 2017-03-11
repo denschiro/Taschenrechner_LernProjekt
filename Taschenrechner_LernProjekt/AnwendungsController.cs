@@ -23,7 +23,7 @@ namespace Taschenrechner_LernProjekt
         {
 
             //Abfrage der EIngabe 
-            view.HoleEingabeVomBenutzer();
+            view.HoleEingabenFuerErsteBerechnungVomBenutzer(); //view.HoleEingabeVomBenutzer();
 
 
             //Berechnung
@@ -31,10 +31,18 @@ namespace Taschenrechner_LernProjekt
 
 
             //Ausgabe der Ergbnisse
-            view.Ausgabe();
+            view.GibResultatAus();
 
             //Abbruch / beenden mit Enter
-            view.WarteAufEndeDurchBenutzer();
+            //view.WarteAufEndeDurchBenutzer();
+            view.HoleEingabenFuerFortlaufendeBerechnung();
+            
+            while (!view.BenutzerWillBeenden)
+             {
+                model.Berechne();
+                view.GibResultatAus();
+                view.HoleEingabenFuerFortlaufendeBerechnung();
+            }
 
 
         }

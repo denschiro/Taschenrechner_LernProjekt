@@ -10,12 +10,18 @@ namespace Taschenrechner_LernProjekt
     {
         private RechnerModel model;  //Attriut
 
+       // BenutzerWillBeenden = false;
+        
+
         public ConsoleView(RechnerModel model)  //Konstruktor
         {
             this.model = model;             //Attribut (li) wie auch Parameter (re) heißt model  
         }
 
-       public void HoleEingabeVomBenutzer()
+      // public void HoleEingabeVomBenutzer()
+            public bool BenutzerWillBeenden { get; private set; }
+
+        public void HoleEingabenFuerErsteBerechnungVomBenutzer()
         {
             model.ErsteZahl = HoleZahlVomBenutzer();
             model.Operation = HoleOperatorVomBenutzer();
@@ -23,8 +29,30 @@ namespace Taschenrechner_LernProjekt
 
         }
 
+        ///
+        public void HoleEingabenFuerFortlaufendeBerechnung()
+        {
+            string eingabe = HoleNaechsteAktionVomBenutzer();
 
-        // Methode HoleZahlVomBenutzerEingabe 
+            if (eingabe == "Fertig")
+            {
+                BenutzerWillBeenden = true;
+            }
+            else
+            {
+                model.ErsteZahl = model.Resultat;
+                model.ZweiteZahl = Convert.ToDouble(eingabe);
+            }
+        }
+
+        private string HoleNaechsteAktionVomBenutzer()
+        {
+            Console.Write("Bitte gib eine weitere Zahl ein (Fertig zum Beenden): ");
+            return Console.ReadLine();
+        }
+        ///
+            
+            // Methode HoleZahlVomBenutzerEingabe 
        private double HoleZahlVomBenutzer()
         {
 
@@ -42,19 +70,19 @@ namespace Taschenrechner_LernProjekt
         }
 
 
-        // Methode WarteAufEndeDurcgBenutzer  
-        public string WarteAufEndeDurchBenutzer()
-        {
-            Console.Write("Zum beenden bitte Return drücken! ");
-            return Console.ReadLine();
-        }
+        //// Methode WarteAufEndeDurcgBenutzer  
+        //public string WarteAufEndeDurchBenutzer()
+        //{
+        //    Console.Write("Zum beenden bitte Return drücken! ");
+        //    return Console.ReadLine();
+        //}
 
 
 
         //Ausgabe von Resultaten
 
 
-        public double Ausgabe()
+        public double GibResultatAus()
         {
 
             switch (model.Operation)
